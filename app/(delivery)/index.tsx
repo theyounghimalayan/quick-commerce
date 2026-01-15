@@ -1,14 +1,13 @@
-import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-import EditScreenInfo from "@/components/EditScreenInfo";
 import { navigate } from "expo-router/build/global-state/routing";
-import ProductDashboard from "@/features/dashboard/ProductDashboard";
 import { Colors } from "@/utils/Constants";
+import DeliveryDashboard from "@/features/delivery/DeliveryDashboard";
 
 export default function TabOneScreen() {
   return (
     <View>
-      <ProductDashboard />
+      <DeliveryDashboard />
       <TouchableOpacity
         onPress={() => {
           navigate("/delivery-login");
@@ -22,7 +21,7 @@ export default function TabOneScreen() {
           width: "80%",
         }}
       >
-        <Text>hello Go to Login</Text>
+        <Text>Go to Login</Text>
       </TouchableOpacity>
       {/* <EditScreenInfo path="app/(tabs)/index.tsx" /> */}
     </View>
