@@ -1,6 +1,6 @@
 import React from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { Link, Tabs } from "expo-router";
+import { Link, Stack, Tabs } from "expo-router";
 import { Pressable } from "react-native";
 
 import Colors from "@/constants/Colors";
@@ -21,23 +21,23 @@ export default function TabLayout() {
   const theme = Colors[colorScheme ?? "light"];
 
   return (
-    <Tabs
+    <Stack
       screenOptions={{
-        tabBarActiveTintColor: theme.tint,
-        tabBarInactiveTintColor: "#9a9a9a",
-        tabBarStyle: {
-          backgroundColor: "#000",
-        },
+        // tabBarActiveTintColor: theme.tint,
+        // tabBarInactiveTintColor: "#9a9a9a",
+        // tabBarStyle: {
+        // backgroundColor: "#000",
+        // },
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
       }}
     >
-      <Tabs.Screen
+      <Stack.Screen
         name="index"
         options={{
           title: "Delivery Partner Dashboard",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          // tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -55,6 +55,6 @@ export default function TabLayout() {
           headerShown: false,
         }}
       />
-    </Tabs>
+    </Stack>
   );
 }

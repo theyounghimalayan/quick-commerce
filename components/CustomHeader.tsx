@@ -1,8 +1,8 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import {
+  View, StyleSheet, TouchableOpacity
+} from "react-native";
 import React, { FC } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { Colors } from "@/utils/Constants";
-import { goBack } from "@/utils/NavigationUtils";
 import { router } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { RFValue } from "react-native-responsive-fontsize";
@@ -14,9 +14,12 @@ const CustomHeader: FC<{ title: string; search?: boolean }> = ({
 }) => {
   return (
     <View style={styles.flexRow}>
-      <Pressable onPress={() => router.back()}>
+      {/* <Pressable onPress={() => router.back()}>
         <Ionicons name="chevron-back" color={Colors.text} size={RFValue(16)} />
-      </Pressable>
+      </Pressable> */}
+      <TouchableOpacity onPress={() => router.back()}>
+        <Ionicons name="chevron-back" color={Colors.text} size={RFValue(16)} />
+      </TouchableOpacity>
       <CustomText style={[{ fontWeight: 600 }, styles.text]} variant="h5">
         {title}
       </CustomText>

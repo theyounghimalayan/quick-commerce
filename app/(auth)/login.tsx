@@ -244,7 +244,7 @@ export default function LoginScreen() {
               </TouchableOpacity>
             </View>
           </View>
-          <View style={styles.inputContainer}>
+          {/* <View style={styles.inputContainer}>
             <Text style={styles.label}>Password</Text>
             <View style={styles.passwordContainer} >
               <TextInput
@@ -369,7 +369,7 @@ export default function LoginScreen() {
                 <Text style={styles.eyeText}>{showPassword ? "👁️" : "👁️‍🗨️"}</Text>
               </TouchableOpacity>
             </View>
-          </View>
+          </View> */}
           <TouchableOpacity style={styles.forgotPassword}>
             <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
           </TouchableOpacity>

@@ -33,6 +33,7 @@ import Animated, {
 import AnimatedHeader from "./AnimatedHeader";
 import Content from "@/components/dashboard/Content";
 import StickySearchBar from "./StickySearchBar";
+import withCart from "../cart/WithCart";
 
 const NOTICE_HEIGHT = -(NoticeHeight + 12);
 
@@ -172,7 +173,7 @@ const ProductDashboard = () => {
   );
 };
 
-export default withCollapsibleContext(ProductDashboard);
+export default withCart(withCollapsibleContext(ProductDashboard));
 
 const styles = StyleSheet.create({
   panelContainer: {

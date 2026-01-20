@@ -5,9 +5,9 @@ import ProductCategories from "@/features/category/ProductCategories";
 
 const Categories = () => {
   return (
-    <CustomSafeAreaView>
+    // <CustomSafeAreaView>
       <ProductCategories />
-    </CustomSafeAreaView>
+    // </CustomSafeAreaView>
   );
 };
 

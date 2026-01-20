@@ -8,6 +8,8 @@ import {
   getProductsByCategoryId,
 } from "@/service/productService";
 import ProductList from "./ProductList";
+import withCart from "../cart/WithCart";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const ProductCategories = () => {
   const [categories, setCategories] = useState<any[]>([]);
@@ -15,6 +17,8 @@ const ProductCategories = () => {
   const [products, setProducts] = useState<any[]>([]);
   const [categoriesLoading, setCategoriesLoading] = useState<boolean>(true);
   const [productsLoading, setProductsLoading] = useState<boolean>(false);
+
+  const insets = useSafeAreaInsets();
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -57,7 +61,7 @@ const ProductCategories = () => {
   }, [selectedCategory]);
 
   return (
-    <View style={styles.mainContainer}>
+    <View style={[styles.mainContainer, { paddingTop: insets.top }]}>
       <CustomHeader title={selectedCategory?.name || "Categories"} search />
       <View style={styles.subContainer}>
         {categoriesLoading ? (
@@ -97,4 +101,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProductCategories;
+export default withCart(ProductCategories);

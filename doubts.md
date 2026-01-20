@@ -1,6 +1,7 @@
 what is modal.tsx
 why was footer absolute
 why is token storage separate than details storage
+zustand manages token automatically using three functions how and do they need to have the same function name
 why claude provided three functions tokenStorage, storage, and storage utility
 how to create a splash screen in expo go
 how to check network calls in expo go app or expo app without any android studio or xcode
@@ -15,15 +16,15 @@ geoLocation differences
 routing despite error in the customerLogin function
 mongo db disconnecting after sometime, and again and again adding an IP to mongo db (to the list of IPs which can access the database)
 out of these <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen
-          name="modal"
-          options={{ presentation: "modal", headerShown: false }}
-        />
-        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-        <Stack.Screen name="(delivery)" options={{ headerShown: false }} />
-        <Stack.Screen name="(customer)" options={{ headerShown: false }} />
-      </Stack> where will the layout navigate first, why does it navigate to the customer dashboard
+<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+<Stack.Screen
+name="modal"
+options={{ presentation: "modal", headerShown: false }}
+/>
+<Stack.Screen name="(auth)" options={{ headerShown: false }} />
+<Stack.Screen name="(delivery)" options={{ headerShown: false }} />
+<Stack.Screen name="(customer)" options={{ headerShown: false }} />
+</Stack> where will the layout navigate first, why does it navigate to the customer dashboard
 check the text rendering error, how it was solved
 going back on swipe even after navigation through router.replace
 through new error if location permission is denied (how to handle this)
@@ -36,3 +37,9 @@ parallax causing padding, snapEnabled, pagingEnabled in carousel study these thi
 what is the initial route in the app in expo router with your current file structure
 mess with aspect ratio in categories product image
 why did he use runOnJS and why is it deprecated
+use of mmkvStorage in authStore when there was a separate tokenStorage which was used in auth functions to store token
+zustand persist, is there any other way to manage state is zustand or just persist, do we have to always manually add a storage to zustand persist
+const { user, setUser } = useAuthStore(); vs const { setUser } = useAuthStore.getState();
+we did not use any provider in zustand
+when do we clear cart from old items?
+why were hoc styles made global
